@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  display: block;
+}
+
+img {
+  display: block;
+  height: auto;
+  width: 100vw; /* 100vw  show scrollbars */
+  overflow: hidden;
+}
+
+/* footer {
+  color: black;
+  /* background-color: navy; */ /*
+  background: linear-gradient(to bottom, orange, blue);
+  text-align: center;
+  padding: 40px;
+} */
+
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  top: 2rem;
+  left: 30vw;
+  height: 10vh;
+  width: 40vw;
+  overflow: scroll;
+  overflow: hidden;
+}
+
+/* img that are children of thumbnail class */
+.thumbnails > img {
+  height: 9vh;
+  width: auto;
+}
+
+.bigImageLRButton {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  height: 50px;
+  width: 50px;
+  opacity: 0.5;
+}
