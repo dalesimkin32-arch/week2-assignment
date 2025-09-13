@@ -73,17 +73,8 @@ console.log(`current image index is ${shownImageIndex}`);
 createThumbnails();
 createBigImage(images[shownImageIndex]);
 
-lButton.addEventListener("click", function () {
-  if (shownImageIndex === 0) {
-    shownImageIndex = images.length - 1;
-  } else {
-    shownImageIndex--;
-  }
-  console.log(`current image index is ${shownImageIndex}`);
-  createBigImage(images[shownImageIndex]);
-});
-
-rButton.addEventListener("click", function () {
+/* made go R and L functions as invoking code more than once even though only twice! */
+function goRight() {
   if (shownImageIndex === images.length - 1) {
     shownImageIndex = 0;
   } else {
@@ -91,4 +82,48 @@ rButton.addEventListener("click", function () {
   }
   console.log(`current image index is ${shownImageIndex}`);
   createBigImage(images[shownImageIndex]);
+}
+
+function goLeft() {
+  if (shownImageIndex === 0) {
+    shownImageIndex = images.length - 1;
+  } else {
+    shownImageIndex--;
+  }
+  console.log(`current image index is ${shownImageIndex}`);
+  createBigImage(images[shownImageIndex]);
+}
+
+/* R and Left html button controls */
+rButton.addEventListener("click", function () {
+  goRight();
 });
+
+lButton.addEventListener("click", function () {
+  goLeft();
+});
+
+/* L and R arrow key controls  */
+/* using goLeft and goRight functions */
+
+window.addEventListener(
+  "keydown",
+  function (event) {
+    if (event.defaultPrevented) {
+      return;
+    }
+    switch (event.key) {
+      case "ArrowRight":
+        goRight();
+        break;
+      case "ArrowLeft":
+        goLeft();
+        break;
+      default:
+        return;
+    }
+    // cancel default even to avoid it being handled twice
+    event.preventDefault();
+  },
+  true
+);
