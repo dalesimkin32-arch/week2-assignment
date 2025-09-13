@@ -75,17 +75,19 @@ createBigImage(images[shownImageIndex]);
 
 lButton.addEventListener("click", function () {
   if (shownImageIndex === 0) {
-    shownImageIndex = images.length;
+    shownImageIndex = images.length - 1;
+  } else {
+    shownImageIndex--;
   }
-  shownImageIndex = shownImageIndex--;
   console.log(`current image index is ${shownImageIndex}`);
   createBigImage(images[shownImageIndex]);
 });
 
 rButton.addEventListener("click", function () {
-  shownImageIndex++;
-  if (shownImageIndex === images.length) {
+  if (shownImageIndex === images.length - 1) {
     shownImageIndex = 0;
+  } else {
+    shownImageIndex++;
   }
   console.log(`current image index is ${shownImageIndex}`);
   createBigImage(images[shownImageIndex]);
