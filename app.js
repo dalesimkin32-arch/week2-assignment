@@ -23,6 +23,51 @@ const images = [
     src: "./images/WindsorCastle_RoundTower.webp",
     alt: "Windsor Castle, centered on the Round Tower",
   },
+
+  {
+    src: "./images/BroadwayTower.webp",
+    alt: "Broadway Tower & Country Park, Broadway, United Kingdom",
+  },
+
+  {
+    src: "./images/Castleonthelake.webp",
+    alt: "Castle on the Lake",
+  },
+
+  {
+    src: "./images/CastleVaduz.webp",
+    alt: "Castle Vaduz, Vaduz, Liechtenstein",
+  },
+
+  {
+    src: "./images/CardiffCastle.webp",
+    alt: "Castle, Cardiff, UK",
+  },
+
+  {
+    src: "./images/ChâteaudeChambord.webp",
+    alt: "Château de Chambord, Chambord, France",
+  },
+
+  {
+    src: "./images/EileanDonanCastle.webp",
+    alt: "Eilean Donan Castle, Dornie, United Kingdom",
+  },
+
+  {
+    src: "./images/Joyceville.webp",
+    alt: "Joyceville, ON K0H 1Y0, Canada",
+  },
+
+  {
+    src: "./images/lamontsaintmichel.webp",
+    alt: "la mont saint michel, France",
+  },
+
+  {
+    src: "./images/NeuschwansteinCastle.webp",
+    alt: "Neuschwanstein Castle, Schwangau, Germany",
+  },
 ];
 
 function createThumbnails() {
