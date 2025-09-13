@@ -1,6 +1,12 @@
 const thumbnails = document.getElementById("thumbnails");
 const displayContainer = document.getElementById("displayContainer");
 
+const rButton = document.getElementById("rightButton");
+
+const lButton = document.getElementById("leftButton");
+
+let shownImageIndex = 0;
+
 // create an array of images
 const images = [
   {
@@ -22,7 +28,7 @@ const images = [
 function createThumbnails() {
   // loop through images array and for each object create an image tag and set it's content to the information in the image object
 
-  images.forEach(function (image) {
+  images.forEach(function (image, index) {
     // image is the image object from above array, index (in parameters above) is the index of that element
     let imageElement = document.createElement("img");
     // console.log(`current image is`, image);
@@ -34,14 +40,14 @@ function createThumbnails() {
       // console.log(image)
       // call this function and pass it the image clicked on
       createBigImage(image);
+      shownImageIndex = index;
+      console.log(`current image index is ${shownImageIndex}`);
     });
 
     // append image element to DOM
     thumbnails.appendChild(imageElement);
   });
 }
-
-createThumbnails();
 
 // createBigImage is expecting to get an object as an argument
 //
@@ -62,3 +68,25 @@ function createBigImage(imgDetails) {
 
   displayContainer.appendChild(bigImage);
 }
+
+console.log(`current image index is ${shownImageIndex}`);
+createThumbnails();
+createBigImage(images[shownImageIndex]);
+
+lButton.addEventListener("click", function () {
+  if (shownImageIndex === 0) {
+    shownImageIndex = images.length;
+  }
+  shownImageIndex = shownImageIndex--;
+  console.log(`current image index is ${shownImageIndex}`);
+  createBigImage(images[shownImageIndex]);
+});
+
+rButton.addEventListener("click", function () {
+  shownImageIndex++;
+  if (shownImageIndex === images.length) {
+    shownImageIndex = 0;
+  }
+  console.log(`current image index is ${shownImageIndex}`);
+  createBigImage(images[shownImageIndex]);
+});

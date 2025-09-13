@@ -9,29 +9,37 @@ html {
 }
 
 body {
-  display: block;
-}
-
-img {
-  display: block;
-  height: auto;
-  width: 100vw; /* 100vw  show scrollbars */
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-color: black;
+  box-sizing: border-box;
   overflow: hidden;
 }
 
-/* footer {
-  color: black;
-  /* background-color: navy; */ /*
-  background: linear-gradient(to bottom, orange, blue);
+img {
+  height: 100%;
+  width: 100vw;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+footer {
+  background-color: black;
+  color: white;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.25rem;
   padding: 40px;
-} */
+}
 
 .thumbnails {
   display: flex;
   justify-content: center;
+  align-items: center;
   position: fixed;
-  top: 2rem;
+  z-index: 5;
+  top: 10%;
   left: 30vw;
   height: 10vh;
   width: 40vw;
@@ -46,10 +54,48 @@ img {
 }
 
 .bigImageLRButton {
-  display: flex;
-  position: fixed;
-  justify-content: space-between;
-  height: 50px;
-  width: 50px;
+  border: 1px solid white;
+  border-radius: 100%;
+  background-color: grey;
+  color: white;
+  padding: 6px 10px;
+  z-index: 5;
   opacity: 0.5;
+  position: absolute;
+  top: 50vh;
+  cursor: pointer;
+}
+
+.lButton {
+  left: 5vw;
+}
+
+.rButton {
+  right: 5vw;
+}
+
+@media (max-width: 450px) {
+  .thumbnails {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 70%;
+    height: 10vh;
+    width: 100vw;
+    overflow: scroll;
+    overflow: hidden;
+  }
+  img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vw;
+    width: auto;
+    overflow: hidden;
+  }
+  .thumbnails > img {
+    height: 10vh;
+    width: auto;
+  }
 }

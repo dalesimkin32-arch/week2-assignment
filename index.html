@@ -8,12 +8,28 @@
     <script src="app.js" defer></script>
   </head>
   <body>
-    <div id="thumbnails" class="thumbnails"></div>
+    <div
+      id="thumbnails"
+      class="thumbnails"
+      aria-label="thumbnails of images to select"
+    ></div>
 
-    <div id="displayContainer"></div>
+    <div id="displayContainer" aria-label="currently selected image"></div>
     <div>
-      <button id="left"></button>
-      <button id="right"></button>
+      <button
+        class="bigImageLRButton lButton"
+        id="leftButton"
+        aria-label="select previous image"
+      >
+        <
+      </button>
+      <button
+        class="bigImageLRButton rButton"
+        id="rightButton"
+        aria-label="select next image"
+      >
+        >
+      </button>
     </div>
   </body>
   <footer>Art E Far Tea &copy; 2025</footer>
