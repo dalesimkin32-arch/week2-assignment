@@ -50,22 +50,28 @@ footer {
 
 .thumbnails {
   display: flex;
+  position: absolute;
   justify-content: center;
   align-items: center;
-  position: fixed;
   z-index: 5;
-  top: 10%;
-  left: 30%;
+  left: 50%;
+  top: 3vh;
+  bottom: auto;
   height: 10vh;
-  width: 40vw;
-  overflow: scroll;
-  overflow: hidden;
+  width: 30vw;
+  transition: top 0.4s;
+  transform: translateX(-50%); /* shift left 50% of own width */
+  overflow-x: scroll;
+  overflow-y: hidden;
 }
 
 /* img that are children of thumbnail class */
 .thumbnails > img {
-  height: 9vh;
+  height: 75px;
   width: auto;
+  flex-shrink: 0;
+  padding: 1px;
+  cursor: pointer;
 }
 
 .bigImageLRButton {
@@ -89,19 +95,17 @@ footer {
   right: 5vw;
 }
 
-@media (max-width: 600px) {
+@media (width <= 600px) {
   .thumbnails {
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
     z-index: 5;
-    top: 70%;
-    left: 30%;
-    height: 10vh;
+    top: 85%;
     width: 40vw;
     overflow: scroll;
-    overflow: visible;
+    overflow: hidden;
   }
   img {
     display: flex;
@@ -109,10 +113,11 @@ footer {
     align-items: center;
     height: 100vh;
     width: 100vw;
-    overflow: hidden;
+    overflow-y: hidden;
+    overflow-x: scroll;
   }
   .thumbnails > img {
-    height: 10vh;
+    height: 5vh;
     width: auto;
   }
 
