@@ -17,3 +17,8 @@ added in more images, but now thumbnails not showing all in scrolling thumbnail 
 unable to sort that seems to show most, but not all. sometimes appear to be hidden so can click on other images not show!!??
 
 need help with that.
+
+happier with thumbnails.
+
+tried to get thumbnails to shift to show the one matching the Big Image
+(when selected via buttons or arrow keys), but couldn't get it to work.

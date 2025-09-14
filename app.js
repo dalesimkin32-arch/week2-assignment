@@ -112,6 +112,12 @@ function createBigImage(imgDetails) {
   bigImage.alt = imgDetails.alt;
 
   displayContainer.appendChild(bigImage);
+
+  /* tested thumbnail scroll to current match bigImage doesn't seem to work - blocks image movement buttons and keys so commented out
+  thumbnails.img[shownImageIndex].scrollIntoView({
+    behavior: "smooth",
+    inline: "center",
+  }); */
 }
 
 console.log(`current image index is ${shownImageIndex}`);
@@ -127,6 +133,11 @@ function goRight() {
   }
   console.log(`current image index is ${shownImageIndex}`);
   createBigImage(images[shownImageIndex]);
+  /* tested thumbnail scroll to current match bigImage doesn't seem to work so commented out
+  thumbnails.img[shownImageIndex].scrollIntoView({
+    behavior: "smooth",
+    inline: "center",
+  }); */
 }
 
 function goLeft() {
@@ -137,6 +148,11 @@ function goLeft() {
   }
   console.log(`current image index is ${shownImageIndex}`);
   createBigImage(images[shownImageIndex]);
+  /* tested thumbnail scroll to current match bigImage doesn't seem to work so commented out
+  thumbnails.img[shownImageIndex].scrollIntoView({
+    behavior: "smooth",
+    inline: "center",
+  }); */
 }
 
 /* R and Left html button controls */

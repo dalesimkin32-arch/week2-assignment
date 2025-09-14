@@ -50,6 +50,8 @@ footer {
 
 .thumbnails {
   display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
   position: absolute;
   justify-content: center;
   align-items: center;
